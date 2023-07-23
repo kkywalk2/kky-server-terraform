@@ -6,7 +6,7 @@ resource "docker_image" "sftpgo" {
 resource "docker_container" "sftpgo" {
   image = docker_image.sftpgo.image_id
   name  = "sftpgo-container"
-  env = ["SFTPGO_WEBDAVD__BINDINGS__0__PORT=10080"]
+  env = ["SFTPGO_WEBDAVD__BINDINGS__0__PORT=10080", "SFTPGO_WEBDAVD__BINDINGS__0__PREFIX=/webdav"]
 
   ports {
     internal = 8080
